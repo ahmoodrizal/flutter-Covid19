@@ -13,7 +13,7 @@ class CardSymptoms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 105,
+      height: MediaQuery.of(context).size.height * 0.15,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -43,7 +43,7 @@ class CardSymptoms extends StatelessWidget {
                   Text(
                     boxTitle,
                     style: blackTextStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: semibold,
                     ),
                   ),
@@ -53,7 +53,7 @@ class CardSymptoms extends StatelessWidget {
                   Text(
                     boxDesc,
                     style: blackTextStyle.copyWith(
-                      fontSize: 10,
+                      fontSize: 15,
                       fontWeight: regular,
                     ),
                   )

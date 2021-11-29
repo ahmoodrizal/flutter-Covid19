@@ -20,7 +20,7 @@ class VaccineCard extends StatelessWidget {
         horizontal: 12,
         vertical: 14,
       ),
-      height: 120,
+      height: MediaQuery.of(context).size.height * 0.170,
       decoration: BoxDecoration(
         color: Color(bgColor),
         borderRadius: BorderRadius.circular(10),
@@ -32,7 +32,7 @@ class VaccineCard extends StatelessWidget {
           Text(
             title,
             style: blackTextStyle.copyWith(
-              fontSize: 10,
+              fontSize: 14,
               fontWeight: semibold,
             ),
           ),
@@ -42,7 +42,7 @@ class VaccineCard extends StatelessWidget {
           Text(
             subtitle,
             style: blackTextStyle.copyWith(
-              fontSize: 20,
+              fontSize: 26,
               fontWeight: semibold,
             ),
           ),
@@ -52,7 +52,7 @@ class VaccineCard extends StatelessWidget {
           Text(
             totalPercent + '%',
             style: blackTextStyle.copyWith(
-              fontSize: 20,
+              fontSize: 24,
               fontWeight: semibold,
             ),
           )

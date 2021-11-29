@@ -8,8 +8,8 @@ class VirusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget header() {
       return HeroBar(
-        title: 'Keep safe &',
-        subtitle: 'stay home',
+        title: 'Keep safe and',
+        subtitle: 'stay at home',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna fusce sed.',
         image: 'assets/Hero2.png',

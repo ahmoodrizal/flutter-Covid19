@@ -34,7 +34,7 @@ class CardNews extends StatelessWidget {
           Text(
             title,
             style: heroTextStyle.copyWith(
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: semibold,
             ),
           )

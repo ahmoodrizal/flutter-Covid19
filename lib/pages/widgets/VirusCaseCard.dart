@@ -42,7 +42,7 @@ class VirusCaseCard extends StatelessWidget {
           Text(
             totalCase + ' case',
             style: blackTextStyle.copyWith(
-              fontSize: 22,
+              fontSize: 26,
               fontWeight: semibold,
             ),
           )

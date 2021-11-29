@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:ihaa/Providers/VaccineProvider.dart';
+
 import 'package:ihaa/pages/widgets/CardNews.dart';
 import 'package:ihaa/pages/widgets/CardSymptoms.dart';
 import 'package:ihaa/theme.dart';
-import 'package:provider/provider.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
-const _url = 'tel:+119';
+const _url = 'tel:119';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    VaccineProvider vaccineProvider = Provider.of<VaccineProvider>(context);
     Widget header() {
       return Container(
-        height: 220,
+        height: MediaQuery.of(context).size.height * 0.330,
         width: double.infinity,
         decoration: BoxDecoration(
             color: backgroundColor1,
@@ -29,24 +28,24 @@ class HomePage extends StatelessWidget {
             Text(
               'Indonesian Health',
               style: heroTextStyle.copyWith(
-                fontSize: 24,
+                fontSize: 32,
                 fontWeight: semibold,
               ),
             ),
             Text(
               'Authorities',
               style: heroTextStyle.copyWith(
-                fontSize: 24,
+                fontSize: 32,
                 fontWeight: semibold,
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 16,
             ),
             Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna fusce sed.',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna fusce sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna fusce sed.',
               style: heroTextStyle.copyWith(
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: light,
               ),
             ),
@@ -56,8 +55,8 @@ class HomePage extends StatelessWidget {
             GestureDetector(
               onTap: _launchCall,
               child: Container(
-                  width: 124,
-                  height: 20,
+                  width: MediaQuery.of(context).size.width * 0.42,
+                  height: MediaQuery.of(context).size.height * 0.030,
                   decoration: BoxDecoration(
                     color: Color(0xffFF7070),
                     borderRadius: BorderRadius.circular(10),
@@ -66,7 +65,7 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       'Call an Emergency',
                       style: heroTextStyle.copyWith(
-                        fontSize: 10,
+                        fontSize: 12,
                         fontWeight: semibold,
                       ),
                     ),
@@ -191,14 +190,14 @@ class HomePage extends StatelessWidget {
             Text(
               'Corona Virus-19',
               style: blackTextStyle.copyWith(
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: semibold,
               ),
             ),
             Text(
               'Symptoms',
               style: blackTextStyle.copyWith(
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: semibold,
               ),
             ),

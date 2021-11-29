@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ihaa/Providers/VaccineProvider.dart';
 
 import 'package:ihaa/pages/widgets/HeroBar.dart';
 import 'package:ihaa/pages/widgets/VaccineCard.dart';
 import 'package:ihaa/theme.dart';
-import 'package:provider/provider.dart';
 
 class VaccinePage extends StatefulWidget {
   @override
@@ -19,9 +17,7 @@ class _VaccinePageState extends State<VaccinePage> {
     super.initState();
   }
 
-  getInit() async {
-    await Provider.of<VaccineProvider>(context).getVaccines();
-  }
+  getInit() async {}
 
   Widget build(BuildContext context) {
     Widget header() {
@@ -76,7 +72,7 @@ class _VaccinePageState extends State<VaccinePage> {
                 horizontal: 18,
                 vertical: 12,
               ),
-              height: 80,
+              height: MediaQuery.of(context).size.height * 0.120,
               decoration: BoxDecoration(
                 color: Color(0xffC7CEEA),
                 borderRadius: BorderRadius.circular(10),
@@ -88,7 +84,7 @@ class _VaccinePageState extends State<VaccinePage> {
                   Text(
                     'Total Target Vaccinated',
                     style: blackTextStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: semibold,
                     ),
                   ),
@@ -98,7 +94,7 @@ class _VaccinePageState extends State<VaccinePage> {
                   Text(
                     '208,265,720' + ' person',
                     style: blackTextStyle.copyWith(
-                      fontSize: 22,
+                      fontSize: 26,
                       fontWeight: semibold,
                     ),
                   )

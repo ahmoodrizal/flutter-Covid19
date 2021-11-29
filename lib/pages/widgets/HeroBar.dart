@@ -19,7 +19,7 @@ class HeroBar extends StatelessWidget {
         margin: EdgeInsets.only(
           bottom: defaultmargin,
         ),
-        height: 220,
+        height: MediaQuery.of(context).size.height * 0.33,
         width: double.infinity,
         decoration: BoxDecoration(
           color: backgroundColor1,
@@ -38,22 +38,22 @@ class HeroBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 170,
-              width: 150,
+              height: MediaQuery.of(context).size.height * 0.23,
+              width: MediaQuery.of(context).size.width * 0.55,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
                     style: heroTextStyle.copyWith(
-                      fontSize: 24,
+                      fontSize: 32,
                       fontWeight: semibold,
                     ),
                   ),
                   Text(
                     subtitle,
                     style: heroTextStyle.copyWith(
-                      fontSize: 24,
+                      fontSize: 32,
                       fontWeight: semibold,
                     ),
                   ),
@@ -63,7 +63,7 @@ class HeroBar extends StatelessWidget {
                   Text(
                     description,
                     style: heroTextStyle.copyWith(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: light,
                     ),
                   )
@@ -71,12 +71,12 @@ class HeroBar extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 8,
+              width: 3,
             ),
             Container(
               margin: EdgeInsets.only(top: 40),
-              width: 110,
-              height: 100,
+              width: MediaQuery.of(context).size.width * 0.28,
+              height: MediaQuery.of(context).size.height * 0.15,
               decoration: BoxDecoration(
                   image: DecorationImage(
                 image: AssetImage(image),
