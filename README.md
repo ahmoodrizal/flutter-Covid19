@@ -1,6 +1,6 @@
-# ihaa
+# Indonesian Health Authorities App
 
-A new Flutter project.
+Made with Flutter
 
 ## Getting Started
 
