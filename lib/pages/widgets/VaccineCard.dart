@@ -42,7 +42,7 @@ class VaccineCard extends StatelessWidget {
           Text(
             subtitle,
             style: blackTextStyle.copyWith(
-              fontSize: 26,
+              fontSize: 16,
               fontWeight: semibold,
             ),
           ),
