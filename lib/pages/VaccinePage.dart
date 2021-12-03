@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:ihaa/pages/widgets/HeroBar.dart';
 import 'package:ihaa/pages/widgets/VaccineCard.dart';
 import 'package:ihaa/theme.dart';
+import 'package:intl/intl.dart';
 
 Future<Vaccine> fetchVaccine() async {
   final response = await http
@@ -16,7 +17,7 @@ Future<Vaccine> fetchVaccine() async {
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
-    throw Exception('Failed to load album');
+    throw Exception('Failed to load Vaccine Data');
   }
 }
 
@@ -24,18 +25,20 @@ class Vaccine {
   final int total;
   final int vaksin1;
   final int vaksin2;
+  final String date;
 
-  Vaccine({
-    required this.total,
-    required this.vaksin1,
-    required this.vaksin2,
-  });
+  Vaccine(
+      {required this.total,
+      required this.vaksin1,
+      required this.vaksin2,
+      required this.date});
 
   factory Vaccine.fromJson(Map<String, dynamic> json) {
     return Vaccine(
       total: json['totalsasaran'],
       vaksin1: json['vaksinasi1'],
       vaksin2: json['vaksinasi2'],
+      date: json['lastUpdate'],
     );
   }
 }
@@ -47,6 +50,7 @@ class VaccinePage extends StatefulWidget {
 
 class _VaccinePageState extends State<VaccinePage> {
   late Future<Vaccine> futureVaccine;
+  final formatter = NumberFormat('###,###,000');
 
   @override
   void initState() {
@@ -68,24 +72,36 @@ class _VaccinePageState extends State<VaccinePage> {
     Widget statusDate() {
       return Container(
         margin: EdgeInsets.symmetric(horizontal: defaultmargin),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Last Update',
-              style: blackTextStyle.copyWith(
-                fontSize: 14,
-                fontWeight: semibold,
-              ),
-            ),
-            Text(
-              '23-09-2021',
-              style: blackTextStyle.copyWith(
-                fontSize: 14,
-                fontWeight: regular,
-              ),
-            )
-          ],
+        child: FutureBuilder<Vaccine>(
+          future: futureVaccine,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Last Update',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 14,
+                        fontWeight: semibold,
+                      ),
+                    ),
+                    Text(
+                      (snapshot.data!.date).substring(0, 10),
+                      style: blackTextStyle.copyWith(
+                        fontSize: 14,
+                        fontWeight: medium,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            } else if (snapshot.hasError) {
+              return Text('${snapshot.error}');
+            }
+            return const CircularProgressIndicator();
+          },
         ),
       );
     }
@@ -132,7 +148,9 @@ class _VaccinePageState extends State<VaccinePage> {
                             height: 5,
                           ),
                           Text(
-                            snapshot.data!.total.toString() + ' person',
+                            (formatter.format(snapshot.data!.total))
+                                    .toString() +
+                                ' person',
                             style: blackTextStyle.copyWith(
                               fontSize: 26,
                               fontWeight: semibold,
@@ -152,12 +170,14 @@ class _VaccinePageState extends State<VaccinePage> {
                               bgColor: 0xffFFB7B2,
                               title: 'Vaccine dose 1',
                               subtitle:
-                                  snapshot.data!.vaksin1.toString() + ' person',
+                                  (formatter.format(snapshot.data!.vaksin1))
+                                          .toString() +
+                                      ' person',
                               totalPercent: ((snapshot.data!.vaksin1 /
                                           snapshot.data!.total) *
                                       100)
                                   .toString()
-                                  .substring(0, 4),
+                                  .substring(0, 5),
                             )),
                         SizedBox(
                           width: 12,
@@ -168,12 +188,14 @@ class _VaccinePageState extends State<VaccinePage> {
                               bgColor: 0xffB5EAD7,
                               title: 'Vaccine dose 2',
                               subtitle:
-                                  snapshot.data!.vaksin2.toString() + ' person',
+                                  (formatter.format(snapshot.data!.vaksin2))
+                                          .toString() +
+                                      ' person',
                               totalPercent: ((snapshot.data!.vaksin2 /
                                           snapshot.data!.total) *
                                       100)
                                   .toString()
-                                  .substring(0, 4),
+                                  .substring(0, 5),
                             )),
                       ],
                     )
