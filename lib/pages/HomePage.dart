@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:ihaa/pages/widgets/CardNews.dart';
 import 'package:ihaa/pages/widgets/CardSymptoms.dart';
 import 'package:ihaa/theme.dart';
@@ -157,15 +156,19 @@ class HomePage extends StatelessWidget {
               child: Row(
                 children: [
                   CardNews(
+                    link: 'https://www.asahi.com/ajw/articles/14492149',
                     imgUrl: 'assets/News2.jpg',
                     title:
-                        'South Korea give 4 million dose of AstraZeneca to Japan',
+                        'South Korea Donate 4.7 million dose of COVAX to North Korea',
                   ),
                   CardNews(
+                    link: 'https://blog.vantagecircle.com/work-from-home-tips/',
                     imgUrl: 'assets/News1.png',
                     title: 'Here are tips to stay at home while quarantine',
                   ),
                   CardNews(
+                    link:
+                        'https://www.cdc.gov/coronavirus/2019-ncov/travelers/proof-of-vaccination.html',
                     imgUrl: 'assets/News3.png',
                     title:
                         'Now you must have a vaccine certificate when traveling.',
