@@ -97,7 +97,15 @@ class _VaccinePageState extends State<VaccinePage> {
               ),
             );
           } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
+            return Center(
+              child: Text(
+                '${snapshot.error}',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: medium,
+                ),
+              ),
+            );
           }
           return Center(
             child: Text(''),
@@ -199,7 +207,15 @@ class _VaccinePageState extends State<VaccinePage> {
               ),
             );
           } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
+            return Center(
+              child: Text(
+                '${snapshot.error}',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: medium,
+                ),
+              ),
+            );
           }
           return Center(
             child: Text(

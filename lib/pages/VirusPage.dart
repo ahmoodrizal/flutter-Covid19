@@ -279,7 +279,15 @@ class _VirusPageState extends State<VirusPage> {
               ),
             );
           } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
+            return Center(
+              child: Text(
+                '${snapshot.error}',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: medium,
+                ),
+              ),
+            );
           }
 
           return Center(
@@ -317,7 +325,15 @@ class _VirusPageState extends State<VirusPage> {
               ),
             );
           } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
+            return Center(
+              child: Text(
+                '${snapshot.error}',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: medium,
+                ),
+              ),
+            );
           }
 
           return Text('');
@@ -378,7 +394,15 @@ class _VirusPageState extends State<VirusPage> {
                 ),
               );
             } else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
+              return Center(
+                child: Text(
+                  '${snapshot.error}',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 14,
+                    fontWeight: medium,
+                  ),
+                ),
+              );
             }
 
             return Center(
