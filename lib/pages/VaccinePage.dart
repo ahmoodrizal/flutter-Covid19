@@ -70,144 +70,147 @@ class _VaccinePageState extends State<VaccinePage> {
     }
 
     Widget statusDate() {
-      return Container(
-        margin: EdgeInsets.symmetric(horizontal: defaultmargin),
-        child: FutureBuilder<Vaccine>(
-          future: futureVaccine,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Last Update',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: semibold,
-                      ),
+      return FutureBuilder<Vaccine>(
+        future: futureVaccine,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Container(
+              margin: EdgeInsets.symmetric(horizontal: defaultmargin),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Last Update',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: semibold,
                     ),
-                    Text(
-                      (snapshot.data!.date).substring(0, 10),
-                      style: blackTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: medium,
-                      ),
-                    )
-                  ],
-                ),
-              );
-            } else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
-            }
-            return const CircularProgressIndicator();
-          },
-        ),
+                  ),
+                  Text(
+                    (snapshot.data!.date).substring(0, 10),
+                    style: blackTextStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: medium,
+                    ),
+                  )
+                ],
+              ),
+            );
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+          return Center(
+            child: Text(''),
+          );
+        },
       );
     }
 
     Widget statusContent() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: 25,
-          bottom: 20,
-          left: defaultmargin,
-          right: defaultmargin,
-        ),
-        child: FutureBuilder<Vaccine>(
-          future: futureVaccine,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 18,
-                        vertical: 12,
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.120,
-                      decoration: BoxDecoration(
-                        color: Color(0xffC7CEEA),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Total Target Vaccinated',
-                            style: blackTextStyle.copyWith(
-                              fontSize: 14,
-                              fontWeight: semibold,
-                            ),
+      return FutureBuilder<Vaccine>(
+        future: futureVaccine,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Container(
+              margin: EdgeInsets.only(
+                top: 25,
+                bottom: 20,
+                left: defaultmargin,
+                right: defaultmargin,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 18,
+                      vertical: 12,
+                    ),
+                    height: MediaQuery.of(context).size.height * 0.120,
+                    decoration: BoxDecoration(
+                      color: Color(0xffC7CEEA),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Total Target Vaccinated',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 14,
+                            fontWeight: semibold,
                           ),
-                          SizedBox(
-                            height: 5,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          (formatter.format(snapshot.data!.total)).toString() +
+                              ' person',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 26,
+                            fontWeight: semibold,
                           ),
-                          Text(
-                            (formatter.format(snapshot.data!.total))
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                          flex: 1,
+                          child: VaccineCard(
+                            bgColor: 0xffFFB7B2,
+                            title: 'Vaccine dose 1',
+                            subtitle: (formatter.format(snapshot.data!.vaksin1))
                                     .toString() +
                                 ' person',
-                            style: blackTextStyle.copyWith(
-                              fontSize: 26,
-                              fontWeight: semibold,
-                            ),
-                          )
-                        ],
+                            totalPercent: ((snapshot.data!.vaksin1 /
+                                        snapshot.data!.total) *
+                                    100)
+                                .toString()
+                                .substring(0, 5),
+                          )),
+                      SizedBox(
+                        width: 12,
                       ),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                            flex: 1,
-                            child: VaccineCard(
-                              bgColor: 0xffFFB7B2,
-                              title: 'Vaccine dose 1',
-                              subtitle:
-                                  (formatter.format(snapshot.data!.vaksin1))
-                                          .toString() +
-                                      ' person',
-                              totalPercent: ((snapshot.data!.vaksin1 /
-                                          snapshot.data!.total) *
-                                      100)
-                                  .toString()
-                                  .substring(0, 5),
-                            )),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Expanded(
-                            flex: 1,
-                            child: VaccineCard(
-                              bgColor: 0xffB5EAD7,
-                              title: 'Vaccine dose 2',
-                              subtitle:
-                                  (formatter.format(snapshot.data!.vaksin2))
-                                          .toString() +
-                                      ' person',
-                              totalPercent: ((snapshot.data!.vaksin2 /
-                                          snapshot.data!.total) *
-                                      100)
-                                  .toString()
-                                  .substring(0, 5),
-                            )),
-                      ],
-                    )
-                  ],
-                ),
-              );
-            } else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
-            }
-            return const CircularProgressIndicator();
-          },
-        ),
+                      Expanded(
+                          flex: 1,
+                          child: VaccineCard(
+                            bgColor: 0xffB5EAD7,
+                            title: 'Vaccine dose 2',
+                            subtitle: (formatter.format(snapshot.data!.vaksin2))
+                                    .toString() +
+                                ' person',
+                            totalPercent: ((snapshot.data!.vaksin2 /
+                                        snapshot.data!.total) *
+                                    100)
+                                .toString()
+                                .substring(0, 5),
+                          )),
+                    ],
+                  )
+                ],
+              ),
+            );
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+          return Center(
+            child: Text(
+              'Fetching Data . . .',
+              style: blackTextStyle.copyWith(
+                fontSize: 28,
+                fontWeight: medium,
+              ),
+            ),
+          );
+        },
       );
     }
 
