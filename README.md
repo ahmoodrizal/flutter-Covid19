@@ -1,6 +1,10 @@
 # Indonesian Health Authorities App
 
-Made with Flutter
+Dibuat Untuk Tugas Akhir Pemrograman Mobile
+
+Ahmad Rizal Imaduddin
+2113191071
+S1 - Teknik Informatika (A2)
 
 - [x] Emergency Button
 - [x] Virus Page Daily Case
