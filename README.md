@@ -1,16 +1,15 @@
 # Indonesian Health Authorities App
 
-Dibuat Untuk Tugas Akhir Pemrograman Mobile
-
-Ahmad Rizal Imaduddin
-2113191071
-S1 - Teknik Informatika (A2)
+Dibuat Untuk Memenuhi Tugas Akhir Pemrograman Mobile
 
 - [x] Emergency Button
 - [x] Virus Page Daily Case
 - [x] Virus Page Cumulative Case
 - [x] Vaccine Page
 - [ ] Error Message
+
+## Author
+Ahmad Rizal Imaduddin / 2113191071 / S1 - Teknik Informatika (A2)
 
 ## Getting Started
 
