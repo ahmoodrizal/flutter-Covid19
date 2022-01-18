@@ -2,6 +2,12 @@
 
 Made with Flutter
 
+- [x] Emergency Button
+- [x] Virus Page Daily Case
+- [x] Virus Page Cumulative Case
+- [x] Vaccine Page
+- [ ] Error Message
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
