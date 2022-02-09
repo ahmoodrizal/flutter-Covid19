@@ -1,6 +1,7 @@
 # Indonesian Health Authorities App
 
-Dibuat Untuk Memenuhi Tugas Akhir Pemrograman Mobile. 
+Dibuat Untuk Memenuhi Tugas Akhir Pemrograman Mobile.
+
 Aplikasi Flutter ini berguna untuk mendapatkan data statistik Covid-19 baik harian dan kumulatif, selain itu juga terdapat data vaksinasi nasional, baik capaian dosis 1 maupun 2.
 
 - [x] Emergency Button
