@@ -8,8 +8,12 @@ Dibuat Untuk Memenuhi Tugas Akhir Pemrograman Mobile
 - [x] Vaccine Page
 - [ ] Error Message
 
+API From:
+- Vaksin => https://github.com/Reynadi531/vaksincovid19-api
+- Virus => https://github.com/Reynadi531/api-covid19-indonesia-v2
+
 ## Author
-Ahmad Rizal Imaduddin / 2113191071 / S1 - Teknik Informatika (A2)
+@ahmoodrizal Ahmad Rizal Imaduddin / 2113191071 / S1 - Teknik Informatika (A2)
 
 ## Getting Started
 
