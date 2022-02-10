@@ -12,7 +12,9 @@ Aplikasi Flutter ini berguna untuk mendapatkan data statistik Covid-19 baik hari
 - [ ] Use Current Location
 - [ ] Dynamic News Carousel
 
-<img src="assets/photo_2022-02-10_10-05-39.jpg" width="48">
+<img src="assets/photo_2022-02-10_10-05-39.jpg" height="100">
+<img src="assets/photo_2022-02-10_10-05-41.jpg" height="100">
+<img src="assets/photo_2022-02-10_10-05-42.jpg" height="100">
 
 API From:
 - Vaksin => https://github.com/Reynadi531/vaksincovid19-api
