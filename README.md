@@ -12,6 +12,10 @@ Aplikasi Flutter ini berguna untuk mendapatkan data statistik Covid-19 baik hari
 - [ ] Use Current Location
 - [ ] Dynamic News Carousel
 
+![This is an image](assets/photo_2022-02-10_10-05-39.jpg =250x600)
+![This is an image](assets/photo_2022-02-10_10-05-41.jpg =250x600)
+![This is an image](assets/photo_2022-02-10_10-05-42.jpg =250x600)
+
 <img src="assets/photo_2022-02-10_10-05-39.jpg" height="auto" width="250">
 <img src="assets/photo_2022-02-10_10-05-41.jpg" height="auto" width="250">
 <img src="assets/photo_2022-02-10_10-05-42.jpg" height="auto" width="250">
