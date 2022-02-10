@@ -14,9 +14,9 @@ Aplikasi Flutter ini berguna untuk mendapatkan data statistik Covid-19 baik hari
 
 <table>
   <tr>
-    <td style="vertical-align: top"><img src="assets/photo_2022-02-10_10-05-39.jpg" height="auto" width="250"> </td>
-    <td style="vertical-align: top"><img src="assets/photo_2022-02-10_10-05-41.jpg" height="auto" width="250"> </td>
-    <td style="vertical-align: top"><img src="assets/photo_2022-02-10_10-05-42.jpg" height="auto" width="250"> </td>
+    <td valign="top"><img src="assets/photo_2022-02-10_10-05-39.jpg" height="auto" width="250"> </td>
+    <td valign="top"><img src="assets/photo_2022-02-10_10-05-41.jpg" height="auto" width="250"> </td>
+    <td valign="top"><img src="assets/photo_2022-02-10_10-05-42.jpg" height="auto" width="250"> </td>
   </tr>
 </table>
 
