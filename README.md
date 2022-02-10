@@ -25,7 +25,7 @@ API From:
 - Virus => https://github.com/Reynadi531/api-covid19-indonesia-v2
 
 ## Author
-@ahmoodrizal / Ahmad Rizal Imaduddin
+[@ahmoodrzl](https://www.instagram.com/ahmoodrzl/ "Instagram") / Ahmad Rizal Imaduddin
 
 ## Getting Started
 
