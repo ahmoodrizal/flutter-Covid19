@@ -20,16 +20,12 @@ Aplikasi Flutter ini berguna untuk mendapatkan data statistik Covid-19 baik hari
   </tr>
 </table>
 
-
-
-
-
 API From:
 - Vaksin => https://github.com/Reynadi531/vaksincovid19-api
 - Virus => https://github.com/Reynadi531/api-covid19-indonesia-v2
 
 ## Author
-@ahmoodrizal Ahmad Rizal Imaduddin / 2113191071 / S1 - Teknik Informatika (A2)
+@ahmoodrizal / Ahmad Rizal Imaduddin
 
 ## Getting Started
 
