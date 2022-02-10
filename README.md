@@ -9,6 +9,8 @@ Aplikasi Flutter ini berguna untuk mendapatkan data statistik Covid-19 baik hari
 - [x] Virus Page Cumulative Case
 - [x] Vaccine Page
 - [ ] Error Message
+- [ ] Use Current Location
+- [ ] Dynamic News Carousel
 
 API From:
 - Vaksin => https://github.com/Reynadi531/vaksincovid19-api
