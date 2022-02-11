@@ -1,4 +1,4 @@
-# Indonesian Health Authorities App
+# Flutter Covid-19 Apps
 
 Dibuat Untuk Memenuhi Tugas Akhir Pemrograman Mobile.
 
